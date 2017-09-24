@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { withGoogleMap, GoogleMap } from 'react-google-maps'
+import { PlaceMarker } from './PlaceMarker'
 
 const AirbnbMap = withGoogleMap(props => (
   <GoogleMap
     defaultCenter={props.center}
-    defaultZoom={props.zoom} />
+    defaultZoom={props.zoom}>
+    {props.places}
+  </GoogleMap>
 ));
 
 export class Map extends Component {
@@ -20,7 +23,8 @@ export class Map extends Component {
   }
 
   render() {
-    var {lat, lng} = this.state;
+    const {lat, lng} = this.state
+    const places = [<PlaceMarker lat={lat} lng={lng} price={20} />]
 
     return(
       <div style={{width: `750px`, height: `750px`}}>
@@ -29,6 +33,7 @@ export class Map extends Component {
             lat: lat,
             lng: lng
           }}
+          places={places}
           zoom={this.zoom}
           containerElement={
             <div style={{ height: `100%` }} />
