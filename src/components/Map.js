@@ -93,14 +93,6 @@ export class Map extends Component {
 
     return(
       <div style={{width: `750px`, height: `750px`}}>
-        <ul>
-          <li>lng: {lng}</li>
-          <li>lat: {lat}</li>
-          <li>xMapBounds.min: {this.xMapBounds.min}</li>
-          <li>xMapBounds.max: {this.xMapBounds.max}</li>
-          <li>yMapBounds.min: {this.yMapBounds.min}</li>
-          <li>yMapBounds.max: {this.yMapBounds.max}</li>
-        </ul>
         <AirbnbMap
           onMapMounted={this.handleMapMounted.bind(this)}
           handleMapChanged={this.handleMapChanged.bind(this)}
@@ -122,3 +114,5 @@ export class Map extends Component {
     );
   }
 }
+
+export default Map;
