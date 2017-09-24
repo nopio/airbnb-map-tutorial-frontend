@@ -6,7 +6,7 @@ export class PlaceMarker extends Component {
   constructor(props) {
     super(props)
 
-     this.state = {
+    this.state = {
       showTooltip: false
     }
   }
@@ -30,9 +30,12 @@ export class PlaceMarker extends Component {
           lat: parseFloat(lat),
           lng: parseFloat(lng)
         }}
-        labelContent={`<div class="map-price-marker"><span>$${price}</span></div>`}>
+        labelClass='map-price-container'
+        labelContent={`<div class="map-price-marker"><span>$${price}</span></div>`}
+        key='marker1'>
         {showTooltip && (
-          <PlaceInfoWindow description={description}
+          <PlaceInfoWindow key={'info1'}
+                           description={description}
                            name={name}
                            price={price}
                            closeWindow={this.closeWindow.bind(this)}/>

@@ -1,24 +1,71 @@
-.App {
+.map-price-container {
+  overflow: visible !important;
+}
+
+.map-price-marker {
+  position: absolute;
+  font-family: 'Helvetica';
+  left: -37px;
+  top: -25px;
+  width: 70px;
+  height: 20px;
+  border-radius: 3px;
+  line-height: 22px;
+  background-color: white;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.07);
   text-align: center;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid gray;
+  z-index: 1;
+}
+.map-price-marker:before,
+.map-price-marker:after {
+  position: absolute;
+  content: "";
+  border-style: solid;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.map-price-marker:after {
+  left: 31px;
+  top: 19px;
+  border-width: 5px;
+  border-color: white transparent transparent;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.map-price-marker:before {
+  left: 30px;
+  top: 20px;
+  border-width: 6px;
+  border-color: gray transparent transparent;
 }
 
-.App-intro {
-  font-size: large;
+.map-price-marker.visited:hover {
+  background-color: #7b8d93;
+  color: #fff;
+  border-color: #5b6a6f;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.map-price-marker.visited:hover:after {
+  border-color: #7b8d93 transparent transparent;
+}
+
+.map-price-marker.visited:hover:before {
+  border-color: #5b6a6f transparent transparent;
+}
+
+.map-price-marker:hover {
+  background-color: #f2f2f2;
+  color: black;
+  border-color: gray;
+  z-index: 3;
+}
+
+.map-price-marker:hover:after {
+  border-color: #f2f2f2 transparent transparent;
+}
+
+.map-price-marker:hover:before {
+  border-color: gray transparent transparent;
 }
