@@ -21,7 +21,7 @@ export class PlaceMarker extends Component {
 
   render() {
     const {showTooltip} = this.state
-    const {lat, lng, name, price, description} = this.props
+    const {lat, lng, name, price, description, id} = this.props
 
     return(
       <Marker
@@ -32,9 +32,9 @@ export class PlaceMarker extends Component {
         }}
         labelClass='map-price-container'
         labelContent={`<div class="map-price-marker"><span>$${price}</span></div>`}
-        key='marker1'>
+        key={`marker${id}`}>
         {showTooltip && (
-          <PlaceInfoWindow key={'info1'}
+          <PlaceInfoWindow key={`info${id}`}
                            description={description}
                            name={name}
                            price={price}

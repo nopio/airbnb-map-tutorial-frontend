@@ -2,6 +2,7 @@
   "name": "airbnb_map_front-end",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
